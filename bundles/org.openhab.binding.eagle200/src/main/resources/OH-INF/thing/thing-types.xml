@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="eagle200"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<bridge-type id="eagle200_bridge">
+		<label>Eagle 200</label>
+		<description>Eagle 200 Device</description>
+		<config-description>
+			<parameter name="hostname" type="text" required="true">
+				<label>Host name or IP address</label>
+				<description>The host name or IP address</description>
+			</parameter>
+			<parameter name="cloudid" type="text" required="true">
+				<label>CloudID</label>
+				<description>The CloudID from the back of the device, all lowercase</description>
+			</parameter>
+			<parameter name="installcode" type="text" required="true">
+				<label>InstallCode (IN)</label>
+				<description>The InstallCode (IN) from the back of the device, no spaces, all lowercase</description>
+			</parameter>
+		</config-description>
+	</bridge-type>
+
+
+	<thing-type id="eagle200_electric_meter">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="eagle200_bridge"/>
+		</supported-bridge-type-refs>
+
+		<label>Eagle 200 Electric Meter</label>
+		<description>Electric Meter bridged by the Eagle 200</description>
+
+		<config-description>
+			<parameter name="hwaddress" type="text" required="true">
+				<label>Hardware address of the meter</label>
+				<description>Hardware address of the meter</description>
+			</parameter>
+			<parameter name="refreshInterval" type="integer" unit="s" min="1">
+				<label>Refresh Interval</label>
+				<description>Interval the device is polled in sec.</description>
+				<default>60</default>
+			</parameter>
+		</config-description>
+	</thing-type>
+
+	<!-- These channels are used as templates to create channels on each eagle200_electric_meter
+		based on the actual values returned by the Eagle 200 for that meter. -->
+
+	<channel-type id="electric_meter_channel">
+		<item-type>String</item-type>
+		<label>Electric Meter Channel</label>
+		<description>Electric Meter Channel</description>
+		<state readOnly="true"></state>
+	</channel-type>
+
+	<channel-type id="electric_meter_channel_number">
+		<item-type>Number</item-type>
+		<label>Electric Meter Channel (Number)</label>
+		<description>Electric Meter Channel (Number)</description>
+		<state readOnly="true"></state>
+	</channel-type>
+
+</thing:thing-descriptions>
