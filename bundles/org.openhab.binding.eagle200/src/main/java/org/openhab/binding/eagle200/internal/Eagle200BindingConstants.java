@@ -34,8 +34,8 @@ public class Eagle200BindingConstants {
     public static final String BRIDGE_TYPEID = "eagle200_bridge";
     public static final String METER_TYPEID = "eagle200_electric_meter";
 
-    public static final String METERCHANNEL_TYPEID = "utility_meter_channel";
-    public static final String METERCHANNEL_NUMBER_TYPEID = "utility_meter_channel_number";
+    public static final String METERCHANNEL_STRING_TYPEID = "electric_meter_channel_string";
+    public static final String METERCHANNEL_NUMBER_TYPEID = "electric_meter_channel_number";
 
     public static final String METERCHANNEL_NUMBER_TYPE = "InstantaneousDemand";
 
@@ -47,9 +47,9 @@ public class Eagle200BindingConstants {
     public static final String THING_BRIDGECONFIG_CLOUDID = "cloudid";
     public static final String THING_BRIDGECONFIG_INSTALLCODE = "installcode";
 
-    public final static ChannelTypeUID CHANNEL_ELECTRIC_METER_TYPEUID = new ChannelTypeUID(METER_TYPEID,
-            METERCHANNEL_TYPEID);
-    public final static ChannelTypeUID CHANNEL_ELECTRIC_METERNUMBER_TYPEUID = new ChannelTypeUID(METER_TYPEID,
+    public final static ChannelTypeUID CHANNEL_ELECTRIC_METER_STRING_TYPEUID = new ChannelTypeUID(BINDING_ID,
+            METERCHANNEL_STRING_TYPEID);
+    public final static ChannelTypeUID CHANNEL_ELECTRIC_METER_NUMBER_TYPEUID = new ChannelTypeUID(BINDING_ID,
             METERCHANNEL_NUMBER_TYPEID);
 
     public static final String THING_CONFIG_HWADDRESS = "hwaddress";

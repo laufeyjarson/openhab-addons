@@ -175,12 +175,12 @@ public class Eagle200MeterHandler extends BaseThingHandler {
                 ChannelUID uid = this.getChannelUID(entry.getKey());
                 if (numeric) {
                     Channel channel = ChannelBuilder.create(uid, "Number").withLabel(tag)
-                            .withType(Eagle200BindingConstants.CHANNEL_ELECTRIC_METERNUMBER_TYPEUID).build();
+                            .withType(Eagle200BindingConstants.CHANNEL_ELECTRIC_METER_NUMBER_TYPEUID).build();
                     channels.add(channel);
                     logger.debug("Adding numeric channel {}", uid);
                 } else {
                     Channel channel = ChannelBuilder.create(uid, "String").withLabel(tag)
-                            .withType(Eagle200BindingConstants.CHANNEL_ELECTRIC_METER_TYPEUID).build();
+                            .withType(Eagle200BindingConstants.CHANNEL_ELECTRIC_METER_STRING_TYPEUID).build();
                     channels.add(channel);
                     logger.debug("Adding string channel {}", uid);
                 }
